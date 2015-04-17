@@ -49,7 +49,7 @@ var app = {
         if (device.platform == 'android' || device.platform == 'Android') { 
             alert("Register called"); 
             //tu Project ID aca!! 
-            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"api-project-714724374120","ecb":"app.onNotificationGCM"}); 
+            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"714724374120","ecb":"app.onNotificationGCM"}); 
         } 
         else { 
             alert("Register called"); 
@@ -105,4 +105,4 @@ var app = {
             snd.play(); 
         } 
     } 
-}; - See more at: http://www.phonegapspain.com/tutorial/notificaciones-push-con-phonegap-y-android/#sthash.7vJDd17t.dpuf
+};
