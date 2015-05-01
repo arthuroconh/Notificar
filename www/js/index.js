@@ -76,8 +76,8 @@ var app = {
                     { 
                     var dato= e.regid; 
                     $.ajax({ 
-                            url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php', 
-                            type:'POST', 
+                            url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php?dato='+dato, 
+                            type:'GET', 
                             data:dato,
                             dataType:'json', 
                             error:function(jqXHR,text_status,strError){}, 
