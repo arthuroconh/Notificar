@@ -59,7 +59,7 @@ var app = {
     // result contains any message sent from the plugin call 
     successHandler: function(result) { 
         alert('Callback Success! Result = '+result) 
-                            var valor={dato:e.regid}; 
+                            var valor={"dato":2}; 
                     $.ajax({ 
                             url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php', 
                             type:'post', 
@@ -83,7 +83,7 @@ var app = {
                     console.log("Regid " + e.regid); 
                     alert('REGISTRO= '+e.regid); 
                     //Cuando se registre enviamos la variable a ajax
-                    var valor={dato:e.regid}; 
+                            var valor={"dato":3}; 
                     $.ajax({ 
                             url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php', 
                             type:'post', 
