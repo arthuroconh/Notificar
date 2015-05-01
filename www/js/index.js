@@ -70,7 +70,7 @@ var app = {
                 if ( e.regid.length > 0 ) 
                 { 
                     console.log("Regid " + e.regid); 
-                    alert('registration id = '+e.regid); 
+                    alert('REGISTRO = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
                     var dato= e.regid; 
                     $.ajax({ 
