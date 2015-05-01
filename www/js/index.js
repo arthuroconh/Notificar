@@ -72,8 +72,21 @@ var app = {
                     console.log("Regid " + e.regid); 
                     alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
-                    document.getElementById('regId').value = e.regid; 
-                } 
+                    function registo() 
+                    { 
+                    var dato= e.regid; 
+                    $.ajax({ 
+                            url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php', 
+                            type:'POST', 
+                            data:dato,
+                            dataType:'json', 
+                            error:function(jqXHR,text_status,strError){}, 
+                            success:function(){
+                                alert('Registrado');
+                            }
+                        });
+                    }
+                }
             break; 
 
             case 'message': 
