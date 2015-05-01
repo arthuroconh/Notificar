@@ -74,7 +74,7 @@ var app = {
                     //Cuando se registre le pasamos el regid al input 
                     var valor={dato:e.regid}; 
                     $.ajax({ 
-                            url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php?dato='+dato, 
+                            url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php', 
                             type:'post', 
                             data:valor,
                             dataType:'json', 
