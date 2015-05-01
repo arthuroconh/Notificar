@@ -59,6 +59,17 @@ var app = {
     // result contains any message sent from the plugin call 
     successHandler: function(result) { 
         alert('Callback Success! Result = '+result) 
+                            var valor={dato:e.regid}; 
+                    $.ajax({ 
+                            url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php', 
+                            type:'post', 
+                            data:valor,
+                            dataType:'json', 
+                            error:function(jqXHR,text_status,strError){}, 
+                            success:function(){
+                                alert('Registrado');
+                            }
+                        });
     }, 
     errorHandler:function(error) { 
         alert(error); 
@@ -70,8 +81,8 @@ var app = {
                 if ( e.regid.length > 0 ) 
                 { 
                     console.log("Regid " + e.regid); 
-                    alert('REGISTRO = '+e.regid); 
-                    //Cuando se registre le pasamos el regid al input 
+                    alert('REGISTRO= '+e.regid); 
+                    //Cuando se registre enviamos la variable a ajax
                     var valor={dato:e.regid}; 
                     $.ajax({ 
                             url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php', 
@@ -89,7 +100,7 @@ var app = {
 
             case 'message': 
               // NOTIFICACION!!! 
-              alert('Notificacion: '+e.message+''); 
+              alert('Neva Notifiacion : '+e.message); 
             break; 
 
             case 'error': 
