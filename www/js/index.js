@@ -78,7 +78,7 @@ var app = {
 
             case 'message': 
               // NOTIFICACION!!! 
-              alert('message = '+e.message+' msgcnt = '+e.msgcnt); 
+              alert('Notificacion: '+e.message+''); 
             break; 
 
             case 'error': 
