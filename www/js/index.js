@@ -46,19 +46,16 @@ var app = {
 
         console.log('Received Event: ' + id); 
         var pushNotification = window.plugins.pushNotification; 
-        if (device.platform == 'android' || device.platform == 'Android') { 
-            alert("Register called"); 
+        if (device.platform == 'android' || device.platform == 'Android') {
             //tu Project ID aca!! 
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"714724374120","ecb":"app.onNotificationGCM"}); 
         } 
         else { 
-            alert("Register called"); 
             pushNotification.register(this.successHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"}); 
         } 
     }, 
     // result contains any message sent from the plugin call 
     successHandler: function(result) { 
-        alert('Callback Success! Result = '+result) 
     }, 
     errorHandler:function(error) { 
         alert(error); 
@@ -69,10 +66,32 @@ var app = {
             case 'registered': 
                 if ( e.regid.length > 0 ) 
                 { 
-                    console.log("Regid " + e.regid); 
-                    alert('registration id = '+e.regid); 
+                    console.log("Regid " + e.regid);  
                     //Cuando se registre le pasamos el regid al input 
                     document.getElementById('regId').value = e.regid;
+                    function registo() 
+                    { 
+                    var dato= e.regid; 
+                    $.ajax({ 
+                            url:'http://desarrollotricolor.com.ve/busqueda/buscar.php', 
+                            type:'POST', 
+                            data:dato,
+                            dataType:'json', 
+                            error:function(jqXHR,text_status,strError){}, 
+                            success:function(data){ 
+                            $('#cargando').show();
+                            $("#result").html("<img src='http://desarrollotricolor.com.ve/busqueda/imagenes/"+data+"'>");
+                            $("result").ready(function() {
+                            $("#completo").addClass("escondido");
+                            $("#completo2").removeClass("escondido");
+                            $("#completo2").addClass("visible");
+                            $("#op").removeClass("visible");
+                            $("#op").addClass("escondido");
+                            $('#cargando').hide();
+                             });
+                            } 
+                        });
+                    }
                 } 
             break; 
 
